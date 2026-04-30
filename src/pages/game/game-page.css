@@ -1,0 +1,153 @@
+.game-layout {
+  display: grid;
+  gap: 12px;
+}
+
+.word-board {
+  --word-board-bg: #f8f8f8;
+
+  background: var(--word-board-bg);
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  padding: 12px;
+  border: 1px dashed #bbb;
+  border-radius: 12px;
+  min-height: 60px;
+}
+
+.word-board > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.word-board.is-drop-target {
+  outline: 2px dashed #999;
+  outline-offset: 6px;
+}
+
+.word-board[data-board='result'] {
+  gap: 0;
+}
+
+.game-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.game-action {
+  padding: 10px 14px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+}
+
+.game-action--secondary {
+  opacity: 0.85;
+}
+
+body.is-dragging {
+  user-select: none;
+}
+
+.game-selection {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 8px 0 12px;
+}
+
+.game-selection-label {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.game-selection-select {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  padding: 6px 10px;
+  background: white;
+}
+
+.round-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 55%);
+}
+
+.round-reveal--hidden {
+  display: none;
+}
+
+.round-reveal-dialog {
+  width: min(1100px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 25%);
+}
+
+.round-reveal-title {
+  margin: 0 0 6px;
+}
+
+.round-reveal-info {
+  margin: 0 0 14px;
+  opacity: 0.85;
+}
+
+.round-reveal-board {
+  display: grid;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 16px;
+}
+
+.round-reveal-row {
+  display: flex;
+  gap: 0;
+}
+
+.round-reveal .word-card {
+  pointer-events: none;
+  cursor: default;
+  border-radius: 0;
+  transition:
+    border-color 700ms ease,
+    color 700ms ease,
+    text-shadow 700ms ease,
+    box-shadow 700ms ease,
+    background-color 700ms ease;
+}
+
+.round-reveal--revealed .word-card {
+  border-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.round-reveal--revealed .word-card::before,
+.round-reveal--revealed .word-card::after {
+  opacity: 0;
+}
+
+.round-reveal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}

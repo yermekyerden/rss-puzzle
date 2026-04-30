@@ -1,0 +1,25 @@
+@import url('../components/word-card/word-card.css');
+@import url('../pages/game/dnd/drag-preview.css');
+@import url('../pages/game/game-page.css');
+@import url('../components/hint-panel/hint-panel.css');
+@import url('../pages/stats/stats-page.css');
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}

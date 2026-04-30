@@ -1,0 +1,76 @@
+.word-card {
+  --puzzle-notch-size: 18px;
+  --puzzle-notch-radius: calc(var(--puzzle-notch-size) / 2);
+  --word-card-border-color: #aaa;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px calc(12px + var(--puzzle-notch-radius));
+  border: 1px solid var(--word-card-border-color);
+  border-radius: 12px;
+  background: #fff;
+  width: max-content;
+  white-space: nowrap;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.word-card::before,
+.word-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: var(--puzzle-notch-size);
+  height: var(--puzzle-notch-size);
+  border-radius: 999px;
+}
+
+.word-card::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: var(--word-board-bg, #fff);
+  border: 1px solid var(--word-card-border-color);
+}
+
+.word-card::after {
+  right: calc(var(--puzzle-notch-radius) * -1);
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid var(--word-card-border-color);
+}
+
+.word-card:active {
+  cursor: grabbing;
+}
+
+.word-card--correct {
+  --word-card-border-color: #2e7d32;
+}
+
+.word-card--wrong {
+  --word-card-border-color: #c62828;
+}
+
+.is-dragging .word-card {
+  cursor: grabbing;
+}
+
+.word-card--has-bg {
+  --word-card-bg-image: none;
+  --word-card-bg-size: 100% 100%;
+  --word-card-bg-position: 50% 50%;
+
+  background-image:
+    linear-gradient(rgb(255 255 255 / 58%), rgb(255 255 255 / 58%)), var(--word-card-bg-image);
+  background-size:
+    100% 100%,
+    var(--word-card-bg-size);
+  background-position:
+    0 0,
+    var(--word-card-bg-position);
+  background-repeat: no-repeat;
+  text-shadow: 0 1px 2px rgb(255 255 255 / 90%);
+}

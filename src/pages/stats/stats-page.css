@@ -1,0 +1,109 @@
+.stats-page {
+  display: grid;
+  gap: 12px;
+}
+
+.stats-title {
+  margin: 0;
+}
+
+.stats-header {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.stats-artwork-info {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.stats-image {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.stats-list {
+  display: grid;
+}
+
+.stats-row {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: grid;
+  gap: 4px;
+}
+
+.stats-sentence {
+  font-weight: 500;
+}
+
+.stats-translation {
+  opacity: 0.8;
+}
+
+.stats-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.stats-button {
+  padding: 10px 14px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+}
+
+.stats-empty {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.stats-sections {
+  display: grid;
+  gap: 16px;
+}
+
+.stats-section {
+  display: grid;
+  gap: 8px;
+}
+
+.stats-section-title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.stats-section-empty {
+  margin: 0;
+  opacity: 0.75;
+}
+
+.stats-sentence-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stats-audio {
+  padding: 6px 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.stats-audio:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stats-audio.is-playing {
+  border-color: #2e7d32;
+}

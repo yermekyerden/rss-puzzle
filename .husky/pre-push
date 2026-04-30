@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -e
+
+cd "$(git rev-parse --show-toplevel)/rss-puzzle"
+
+node scripts/validate-branch-name.js
+npm run lint
+npm run stylelint
+npm run typecheck

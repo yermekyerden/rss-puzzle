@@ -1,0 +1,19 @@
+.drag-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(0, 0, 0);
+}
+
+.drag-preview-label {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 12%);
+  font-size: 14px;
+  user-select: none;
+}
